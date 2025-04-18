@@ -1,34 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/18 13:11:52 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/18 15:24:41 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char    *ft_strchr(const char *s, int c)
 {
-    int i;
+    size_t i;
+    size_t b;
 
     i = 0;
-    if ((char)c == '\0')
+    b =  ft_strlen(s);
+    while(i <= b)
     {
-        return ('\0');
-    }
-    else
-    {
-        while(s[i] != '\0')
+        if((unsigned char)c == s[i])
         {
-            if((char)c == s[i])
-            {
-                return (s+i);
-            }
-            i++;
+            return ((char *)s+i);
         }
+        i++;
     }
     return (NULL);
 }
-
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
 int main(void)
 {
     const char *s = "THIS IS ISH";
-    char c = 'I';
+    char c = '\0';
 
-    printf("%s", ft_strchr(s, c));
+    //printf("%s", ft_strchr(s, c));
+    assert(strchr(s, c) == ft_strchr(s, c));
 }
 
-/*'\0' is part of the string*/
+/*'\0' is part of the string. Used strlen there because I wanna loop throought the '\0' char as well
+the return type is char *, that is why it needs casting in the  return, s+i is pointer arithmetic */

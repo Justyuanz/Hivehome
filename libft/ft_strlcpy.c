@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 15:25:24 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/18 15:25:27 by jinzhang         ###   ########.fr       */
+/*   Created: 2025/04/18 16:05:13 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/18 18:10:28 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int    ft_tolower(int c)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-   if((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
-   {
-       return (c + 32);
-   }
-   return c;
+	
 }
 
-#include <ctype.h>
 #include <stdio.h>
-int main(void)
+#include <bsd/string.h>
+int	main(void)
 {
-   int c = 97;
-   int b = 97;
-   printf("%c", (unsigned char)ft_tolower(c));
-   printf("%c", (unsigned char)tolower(b));
+	char dst[50];
+	const char src[] = "This is src";
+	size_t size = sizeof(src);
+
+	strlcpy(dst, src, size);
+	printf("%s", dst);
 }
+
+/*
+return value of strlcpy is always the length of src,
+size_t is result of sizeof operator, sizeof counts the '\0' while strlen does not.
+*/
