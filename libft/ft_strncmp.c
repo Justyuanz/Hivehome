@@ -28,7 +28,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 #include <assert.h>
 
@@ -40,4 +40,4 @@ int	main(void)
 	assert(ft_strncmp(s1, s2, 2) == strncmp(s1, s2, 2));
 	assert(ft_strncmp(s1, s2, 6) == strncmp(s1, s2, 6));
 	assert(ft_strncmp(s1, s2, 0) == strncmp(s1, s2, 0));
-}
+}*/

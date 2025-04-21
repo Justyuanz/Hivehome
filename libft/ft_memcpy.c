@@ -28,7 +28,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -41,11 +41,11 @@ int	main(void)
 
 	printf("%s\n", (char *)memcpy(dst, src, n));
 	printf("%s\n", (char *)ft_memcpy(dst1, src, n));
-	/*for(size_t i = 0; i < n; i++)
+	for(size_t i = 0; i < n; i++)
 	{
 		printf("%c", dst[i]);
-	}*/
-}
+	}
+}*/
 /*
 We do not need to handle the case when the behaviour is said to be undefined because it affects running time
 Memcpy is copying memory byte by byte
