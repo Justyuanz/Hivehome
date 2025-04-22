@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:47:44 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/18 15:28:36 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/22 11:00:21 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	main(void)
 }
 
 /*
+The  memchr()  and memrchr() functions return a pointer to the matching byte or NULL if the character does not occur in the given memory area.
 the difference between unsigned char pointer and char pointer
-why do i need to cast const cid * to void * 
+why do i need to cast const void * to void * 
 */

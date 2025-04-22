@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:11:52 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/18 15:24:41 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/22 18:50:03 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ char    *ft_strchr(const char *s, int c)
 int main(void)
 {
     const char *s = "THIS IS ISH";
-    char c = '\0';
+    char c = S;
 
-    //printf("%s", ft_strchr(s, c));
+    printf("%s", ft_strchr(s, c));
     assert(strchr(s, c) == ft_strchr(s, c));
 }
 

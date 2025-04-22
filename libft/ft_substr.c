@@ -25,7 +25,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     sub[i] = '\0';
     return (sub);
 }
-
+/*
 #include <assert.h>
 int main(void)
 {
@@ -37,8 +37,8 @@ int main(void)
     assert(ft_strncmp(expected, result, len) == 0);
     free (result);
 }
-
+*/
 /*
-make it a habbit to check every parameter?
+make it a habit to check every parameter?
 use strdup to allocate an empty string so the freeing would be safe later.
 */

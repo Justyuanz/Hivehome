@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:10:58 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/19 11:50:47 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:52:57 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void    *ft_calloc(size_t count, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char    *ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 
