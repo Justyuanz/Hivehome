@@ -4,7 +4,7 @@
 	//count words using delimiter, then we have indexes of the array
 	//like argv, the last in the array is NULL
 	//count size for each element
-int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	size_t len;
 	size_t	i;
@@ -21,7 +21,7 @@ int	count_words(char const *s, char c)
 	}
 	return (word);
 }
-int	word_len(char const *s, char c)
+static size_t	word_len(char const *s, char c)
 {
 	int	i;
 	size_t	len;
@@ -30,46 +30,61 @@ int	word_len(char const *s, char c)
 	len = 0;
 	while(c == s[i])
 		i++;
-	while(s[i] != c && (s[i + 1] == c || s[i  + 1] == '\0'))
+	while(s[i] != c && s[i] != '\0')
 	{
 		i++;
 		len++;
 	}
 	return (len);
 }
+static void *ft_free(char **arr, int index)
+{
+	while(index > 0)
+	{
+		free(arr[index]);
+		index--;
+	}
+	return(NULL);
+} 
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-	int	totalwords;
+	size_t	totalwords;
 	size_t	i;
 	size_t	j;
 	size_t	wordlen;
 
 	i = 0;
 	j = 0;
-	if(!s)
-		return (NULL);
 	totalwords = count_words(s, c);
-	arr = malloc((totalwords + 1) * sizeof(char *));
-	arr[totalwords] = NULL;
-	if(!arr)
+	if(!s ||!(arr = malloc((totalwords + 1) * sizeof(char *))))
 		return (NULL);
 	while (i < totalwords)
 	{
-		wordlen = word_len(s[i], c);
-		malloc((wordlen + 1) * sizeof(char));
-		while(j < wordlen)
-		{
-			ft_substr(s, j, wordlen);
-		}
+		while(s[j] == c)
+			j++;
+		wordlen = word_len(s + j, c);
+		arr[i] = ft_substr(s + j, 0, wordlen);
+		j += wordlen;
+		if(!arr[i])
+			return (ft_free(arr, i));
 		i++;
 	}
+	arr[i] = NULL;
 	return(arr);
 }
 int	main(void)
 {
 	char const *s = ",Hello,,this is,,a,,test,,hah";
 	char	c =',';
-	
-	ft_split(s, c);
+	char	**arr = ft_split(s, c);
+	int	i = 0;
+
+	while (arr[i])
+	{
+		printf("%s\n", arr[i]);
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }

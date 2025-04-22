@@ -1,6 +1,6 @@
 #include "libft.h"
 #include <stdio.h>
-int	ft_isset(char c, char const*set)
+static int	ft_isset(char c, char const*set)
 {
 	size_t	i;
 

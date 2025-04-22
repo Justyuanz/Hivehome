@@ -35,7 +35,7 @@ char    *ft_strchr(const char *s, int c)
 int main(void)
 {
     const char *s = "THIS IS ISH";
-    char c = S;
+    char c = 'S';
 
     printf("%s", ft_strchr(s, c));
     assert(strchr(s, c) == ft_strchr(s, c));
