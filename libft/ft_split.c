@@ -39,11 +39,12 @@ static size_t	word_len(char const *s, char c)
 }
 static void *ft_free(char **arr, int index)
 {
-	while(index > 0)
+	while(index >=0)
 	{
 		free(arr[index]);
 		index--;
 	}
+	free(arr);
 	return(NULL);
 } 
 char	**ft_split(char const *s, char c)
@@ -76,7 +77,7 @@ char	**ft_split(char const *s, char c)
 int	main(void)
 {
 	char const *s = ",Hello,,this is,,a,,test,,hah";
-	char	c =',';
+	char	c = 0;
 	char	**arr = ft_split(s, c);
 	int	i = 0;
 

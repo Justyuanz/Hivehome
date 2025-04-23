@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 14:43:46 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/17 16:20:50 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:27:29 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,41 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
+#include "libft.h"
+#include <string.h>
 #include <stdio.h>
+#include <ctype.h>
+#include <stdint.h>
+#include <stddef.h>
+int main(void)
+{
+	
+	char buffer1[50] = {0};
+	char buffer2[50] = {0};
+	char memmove_str[] = "Hello world! Memmove test string";
+	memmove(buffer1, memmove_str, 7);
+	ft_memmove(buffer2, memmove_str, 7);
+	printf("ft_memmove:\t\t[%s]\n", buffer2);
+	printf("memmove:\t\t[%s]\n", buffer1);
+
+
+	ft_bzero(buffer1, 50);
+	ft_bzero(buffer2, 50);
+	ft_memmove(buffer2 + 2, memmove_str, 5);
+	memmove(buffer1 + 2, memmove_str, 5);
+	printf("\nft_memmove:\t\t[%s]\n", buffer2);
+	printf("memmove:\t\t[%s]\n", buffer1);
+
+	ft_bzero(buffer1, 50);
+	ft_bzero(buffer2, 50);
+	ft_memmove(buffer2, memmove_str + 2, 7);
+	memmove(buffer1, memmove_str + 2, 7);
+	printf("\nft_memmove:\t\t[%s]\n", buffer2);
+	printf("memmove:\t\t[%s]\n", buffer1);
+
+		
+}
+/*#include <stdio.h>
 #include <string.h>
 
 int	main(void)
@@ -51,7 +84,7 @@ int	main(void)
 	size_t	n = 5;
 
 	printf("%.5s", (char *)ft_memmove(dest, src, n));
-}
+}*/
 /*Copying forward is usually faster on modern CPUs due to memory caching and how the CPU prefetches data. 
 it is safe when dest<=src and they still overlap
 If dest is after/more(comparing the memory address) than src, to ensure that no data loss occurs, 

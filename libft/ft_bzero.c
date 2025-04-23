@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:56:06 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/16 19:37:55 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:17:21 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }
-#include<stdio.h>
+/*#include<stdio.h>
 int	main(void)
 {
 	char a[50];
@@ -29,6 +29,7 @@ int	main(void)
 	
 
 }
+	*/
 
 /*integer constant literal  0 == '\0' 
 '\0' is defined to be a null character - that is a character with all bits set to zero. 
