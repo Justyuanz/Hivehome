@@ -16,15 +16,3 @@ char *ft_strdup(const char *s1)
     s2[i] = '\0';
     return (s2);
 }
-
-/*#include <string.h>
-#include <assert.h>
-int main(void)
-{
-    const char *s1 = "";
-    char *origin = strdup(s1);
-    char *mine = ft_strdup(s1);
-    assert(strcmp(origin, mine) == 0);
-    free(origin);
-    free(mine);
-}*/

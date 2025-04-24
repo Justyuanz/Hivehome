@@ -11,13 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void	ft_bzero(void *s, size_t n)
-{
-	ft_memset(s, 0, n);
-}
-/*#include<stdio.h>
-
-	*/
 
 /*integer constant literal  0 == '\0' 
 '\0' is defined to be a null character - that is a character with all bits set to zero. 
@@ -29,3 +22,8 @@ void	ft_bzero(void *s, size_t n)
  NULL is not guaranteed to be 0 -- its exact value is architecture-dependent. 
  Most major architectures define it to (void*)0
 */
+
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}

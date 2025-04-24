@@ -1,5 +1,9 @@
 #include "libft.h"
-#include <stdio.h>
+
+/*
+When allocating memory for the substring, you're using sizeof(char const *) instead of sizeof(char). This will allocate more memory than needed. The correct size is sizeof(char), not sizeof(char const *).
+*/
+
 static int	ft_isset(char c, char const*set)
 {
 	size_t	i;
@@ -31,15 +35,3 @@ char *ft_strtrim(char const *s1, char const *set)
 	sub = ft_substr(s1, start, (len - start));
 	return(sub);
 }
-#include <stdio.h>
-int	main(void)
-{
-	char const *s1 = "";
-	char const	*set = "2";
-	char	*str = ft_strtrim(s1, set);
-	printf("%s", str);
-	free(str);
-}
-/*
-When allocating memory for the substring, you're using sizeof(char const *) instead of sizeof(char). This will allocate more memory than needed. The correct size is sizeof(char), not sizeof(char const *).
-*/

@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*'\0' is part of the string. Used strlen there because I wanna loop throought the '\0' char as well
+the return type is char *, that is why it needs casting in the  return, s+i is pointer arithmetic */
+
 char    *ft_strchr(const char *s, int c)
 {
     size_t i;
@@ -29,17 +32,3 @@ char    *ft_strchr(const char *s, int c)
     }
     return (NULL);
 }
-#include <stdio.h>
-#include <string.h>
-#include <assert.h>
-int main(void)
-{
-    const char *s = "THIS IS ISH";
-    char c = 'S';
-
-    printf("%s", ft_strchr(s, c));
-    assert(strchr(s, c) == ft_strchr(s, c));
-}
-
-/*'\0' is part of the string. Used strlen there because I wanna loop throought the '\0' char as well
-the return type is char *, that is why it needs casting in the  return, s+i is pointer arithmetic */

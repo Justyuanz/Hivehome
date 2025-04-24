@@ -1,4 +1,18 @@
 #include "libft.h"
+
+/*
+Locates the first occurrence of the null-terminated string needle in the string haystack,
+where not more than len characters are searched.
+
+If needle is an empty string, haystack is returned; 
+if needle occurs nowhere in haystack, NULL is returned; 
+otherwise a pointer to the first character of the first occurrence of needle is returned.
+
+needle[i] && haystack[j + i] == needle[i] → compares each char of needle
+(j + i) < len → makes sure we don’t go past the allowed buffer
+needle[i] == '\0' → means we matched the whole needle
+*/
+
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     size_t  i;
@@ -24,31 +38,3 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
     }
     return (NULL);
 }
-
-#include <stdio.h>
-#include <string.h>
-#include <assert.h>
-int main(void)
-{
-    const char *haystack = "dsfsd";
-   // printf("%s", strnstr(haystack, "ds", 3));
-   // printf("%s", ft_strnstr(haystack, "ds", 3));
-    assert(strnstr(haystack, "fs", 5) == ft_strnstr(haystack, "fs", 5));
-    assert(strnstr(haystack, "fs", 1) == ft_strnstr(haystack, "fs", 1));
-    assert(strnstr(haystack, "ds", 0) == ft_strnstr(haystack, "ds", 0));
-    assert(strnstr(haystack, "", 3) == ft_strnstr(haystack, "", 3));
-    assert(strnstr(haystack, "a", 5) == ft_strnstr(haystack, "a", 5));
-}
-
-/*
-Locates the first occurrence of the null-terminated string needle in the string haystack,
-where not more than len characters are searched.
-
-If needle is an empty string, haystack is returned; 
-if needle occurs nowhere in haystack, NULL is returned; 
-otherwise a pointer to the first character of the first occurrence of needle is returned.
-
-needle[i] && haystack[j + i] == needle[i] → compares each char of needle
-(j + i) < len → makes sure we don’t go past the allowed buffer
-needle[i] == '\0' → means we matched the whole needle
-*/

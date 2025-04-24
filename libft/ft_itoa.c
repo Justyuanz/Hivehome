@@ -58,13 +58,3 @@ char	*ft_itoa(int n)
 	str[len] = '\0';
 	return (str);
 }
-
-#include <stdio.h>
-int	main(void)
-{
-	int i = -12345;
-	char *str = ft_itoa(i);
-
-	printf("%s", str);
-	free(str);
-}

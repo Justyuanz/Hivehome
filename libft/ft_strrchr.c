@@ -33,15 +33,3 @@ char	*ft_strrchr(const char *s, int c)
 		return (NULL);
 	return (j);
 }
-#include <assert.h>
-#include <string.h>
-#include <stdio.h>
-int	main(void)
-{
-	const char *s = "THIS IS ISH";
-
-	//printf("%s", ft_strrchr(s, 'I'));
-	assert(strrchr(s, 'I')  == ft_strrchr(s, 'I'));
-	assert(strrchr(s, 'Z')  == ft_strrchr(s, 'Z'));
-	assert(strrchr(s, '\0')  == ft_strrchr(s, '\0'));
-}

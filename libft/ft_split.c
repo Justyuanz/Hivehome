@@ -1,5 +1,5 @@
 #include "libft.h"
-#include <stdio.h>
+
 	//check input validation
 	//count words using delimiter, then we have indexes of the array
 	//like argv, the last in the array is NULL
@@ -73,19 +73,4 @@ char	**ft_split(char const *s, char c)
 	}
 	arr[i] = NULL;
 	return(arr);
-}
-int	main(void)
-{
-	char const *s = ",Hello,,this is,,a,,test,,hah";
-	char	c = 0;
-	char	**arr = ft_split(s, c);
-	int	i = 0;
-
-	while (arr[i])
-	{
-		printf("%s\n", arr[i]);
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
 }
