@@ -28,17 +28,3 @@ int ft_atoi(const char *str)
     }
     return (sign * result);
 }
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <assert.h>
-int main(void)
-{
-  assert(atoi(" -123junk") == ft_atoi(" -123junk"));
-  assert(atoi(" +023junk") == ft_atoi(" +023junk"));
-  assert(atoi(" 0") == ft_atoi(" 0"));
-  assert(atoi("0042") == ft_atoi("0042"));
-  assert(atoi("0x2a4") == ft_atoi("0x2a4"));
-  assert(atoi("sa") == ft_atoi("sa"));
-  assert(atoi("2147483648") == ft_atoi("2147483648"));
-}

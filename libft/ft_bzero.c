@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:56:06 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/23 16:17:21 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:16:56 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,7 @@ void	ft_bzero(void *s, size_t n)
 	ft_memset(s, 0, n);
 }
 /*#include<stdio.h>
-int	main(void)
-{
-	char a[50];
-	size_t n = 50;
 
-	ft_bzero(a, n);
-	for (size_t i = 0; i < 50; i++)
-	{
-		printf("%i", a[i]);
-	}
-	
-
-}
 	*/
 
 /*integer constant literal  0 == '\0' 
