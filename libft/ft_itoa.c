@@ -1,10 +1,11 @@
 #include "libft.h"
-static int get_len(long	n)
+
+static int	get_len(long n)
 {
 	int	len;
 
 	len = 1;
-	if(n < 0)
+	if (n < 0)
 	{
 		len++;
 		n = -n;
@@ -13,20 +14,19 @@ static int get_len(long	n)
 	{
 		len++;
 		n /= 10;
-
 	}
 	return (len);
 }
-static char	*make_str(char	*str, long p, int len)
+static char	*make_str(char *str, long p, int len)
 {
-	if(p < 0)
+	if (p < 0)
 	{
 		str[0] = '-';
 		p = -p;
 	}
-	while(p > 0)
+	while (p > 0)
 	{
-		str[len - 1] = p%10 + '0';
+		str[len - 1] = p % 10 + '0';
 		p /= 10;
 		len--;
 	}
@@ -34,24 +34,24 @@ static char	*make_str(char	*str, long p, int len)
 }
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int	len;
-	long	p;
+	char *str;
+	int len;
+	long p;
 
-	p = (long )n;
+	p = (long)n;
 	len = 1;
 	if (p == 0)
 	{
 		str = malloc(2 * sizeof(char));
-		if(!str)
+		if (!str)
 			return (NULL);
 		str[0] = '0';
 	}
 	else
 	{
 		len = get_len(n);
-		str = malloc ((len + 1) * sizeof(char));
-		if(!str)
+		str = malloc((len + 1) * sizeof(char));
+		if (!str)
 			return (NULL);
 		str = make_str(str, p, len);
 	}

@@ -13,22 +13,23 @@
 #include "libft.h"
 
 /*'\0' is part of the string. Used strlen there because I wanna loop throought the '\0' char as well
-the return type is char *, that is why it needs casting in the  return, s+i is pointer arithmetic */
+the return type is char *, that is why it needs casting in the  return,
+	s+i is pointer arithmetic */
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    size_t i;
-    size_t b;
+	size_t i;
+	size_t b;
 
-    i = 0;
-    b =  ft_strlen(s);
-    while(i <= b)
-    {
-        if((unsigned char)c == s[i])
-        {
-            return ((char *)s+i);
-        }
-        i++;
-    }
-    return (NULL);
+	i = 0;
+	b = ft_strlen(s);
+	while (i <= b)
+	{
+		if ((unsigned char)c == s[i])
+		{
+			return ((char *)s + i);
+		}
+		i++;
+	}
+	return (NULL);
 }

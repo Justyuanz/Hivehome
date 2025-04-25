@@ -12,14 +12,17 @@
 
 #include "libft.h"
 
-/*integer constant literal  0 == '\0' 
-'\0' is defined to be a null character - that is a character with all bits set to zero. 
-'\0' is (like all character literals) an integer constant, in this case with the value zero. So
+/*integer constant literal  0 == '\0'
+'\0' is defined to be a null character
+	- that is a character with all bits set to zero.
+'\0' is (like all character literals) an integer constant,
+	in this case with the value zero. So
  '\0' is completely equivalent to an unadorned 0 integer constant
- "null character (NUL)" is easiest to rule out. '\0' is a character literal. 
- In C, it is implemented as int, so, it's the same as 0, which is of INT_TYPE_SIZE. 
- 
- NULL is not guaranteed to be 0 -- its exact value is architecture-dependent. 
+ "null character (NUL)" is easiest to rule out. '\0' is a character literal.
+ In C, it is implemented as int, so, it's the same as 0,
+	which is of INT_TYPE_SIZE.
+
+ NULL is not guaranteed to be 0 -- its exact value is architecture-dependent.
  Most major architectures define it to (void*)0
 */
 

@@ -15,19 +15,21 @@
 /*
 We do not need to handle the case when the behaviour is said to be undefined because it affects running time
 Memcpy is copying memory byte by byte
-if  we try to write past the allocated memory of dst, there might be weird garbage output or segfault
-If copying strings or part of a string using memcpy, always null-terminate manually if you're going to treat it as a C string e.g. printf("%s")*/
+if  we try to write past the allocated memory of dst,
+	there might be weird garbage output or segfault
+If copying strings or part of a string using memcpy,
+	always null-terminate manually if you're going to treat it as a C string e.g. printf("%s")*/
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*to;
-	const char	*from;
+	size_t i;
+	char *to;
+	const char *from;
 
 	i = 0;
 	to = (char *)dest;
-	from  = (const char *)src;
-	while(i < n)
+	from = (const char *)src;
+	while (i < n)
 	{
 		to[i] = from[i];
 		i++;

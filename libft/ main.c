@@ -1,25 +1,27 @@
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 #include <assert.h>
 #include <ctype.h>
 #include <fcntl.h>
+#include <stdio.h>
+#include <string.h>
+
 void	ft_atoi_test(void)
 {
-  assert(atoi(" -123junk") == ft_atoi(" -123junk"));
-  assert(atoi(" +023junk") == ft_atoi(" +023junk"));
-  assert(atoi(" 0") == ft_atoi(" 0"));
-  assert(atoi("0042") == ft_atoi("0042"));
-  assert(atoi("0x2a4") == ft_atoi("0x2a4"));
-  assert(atoi("sa") == ft_atoi("sa"));
-  assert(atoi("2147483648") == ft_atoi("2147483648"));
+	assert(atoi(" -123junk") == ft_atoi(" -123junk"));
+	assert(atoi(" +023junk") == ft_atoi(" +023junk"));
+	assert(atoi(" 0") == ft_atoi(" 0"));
+	assert(atoi("0042") == ft_atoi("0042"));
+	assert(atoi("0x2a4") == ft_atoi("0x2a4"));
+	assert(atoi("sa") == ft_atoi("sa"));
+	assert(atoi("2147483648") == ft_atoi("2147483648"));
 }
 
 void	ft_bzero_test(void)
 {
-	char a[50];
-	size_t n = 50;
+	char	a[50];
+	size_t	n;
 
+	n = 50;
 	ft_bzero(a, n);
 	for (size_t i = 0; i < 50; i++)
 	{
@@ -27,42 +29,42 @@ void	ft_bzero_test(void)
 	}
 }
 
-void mft_calloc_test(void)
+void	mft_calloc_test(void)
 {
-    const unsigned char *s1;
-    const unsigned char *s2;
-    size_t i;
-    size_t count = 0;
-    size_t size = sizeof(unsigned char);
+	const unsigned char	*s1;
+	const unsigned char	*s2;
+	size_t				i;
+	size_t				count;
+	size_t				size;
 
-    i = 0;
-    s1 = calloc(count, size);
-    s2 = ft_calloc(count, size);
-
-    if (s1 == NULL || s2 == NULL)
-        return (1);
-    while(i < count * size)
-    {
-        if (s1[i] != s2[i])
-        {
-            free((void *)s1);
-            free((void *)s2);
-            printf("mismatch!");
-            return (s1[i] - s2[i]);
-        }
-        i++;
-    }
-
-    free((void *)s1);
-    free((void *)s2);
-    printf("match!");
+	count = 0;
+	size = sizeof(unsigned char);
+	i = 0;
+	s1 = calloc(count, size);
+	s2 = ft_calloc(count, size);
+	if (s1 == NULL || s2 == NULL)
+		return (1);
+	while (i < count * size)
+	{
+		if (s1[i] != s2[i])
+		{
+			free((void *)s1);
+			free((void *)s2);
+			printf("mismatch!");
+			return (s1[i] - s2[i]);
+		}
+		i++;
+	}
+	free((void *)s1);
+	free((void *)s2);
+	printf("match!");
 }
 
-void ft_isalnum_test(void)
+void	ft_isalnum_test(void)
 {
-	int a;
-	int b;
-	int e;
+	int	a;
+	int	b;
+	int	e;
 	int	c;
 	int	d;
 
@@ -85,10 +87,10 @@ void ft_isalnum_test(void)
 	printf("%d\n", isalnum(d));
 }
 
-void ft_isalpha_test(void)
+void	ft_isalpha_test(void)
 {
-	int a;
-	int b;
+	int	a;
+	int	b;
 	int	c;
 	int	d;
 
@@ -98,22 +100,20 @@ void ft_isalpha_test(void)
 	d = 'u';
 	printf("%d ", ft_isalpha(a));
 	printf("%d\n", isalpha(a));
-	//system-specific or compiler-specific details that cause isalpha() to return a different non-zero value, such as 1024
-	printf("%d ", ft_isalpha(b));
+	// system-specific or compiler-specific details that cause isalpha() to return a different non-zero value,
+	such as 1024 printf("%d ", ft_isalpha(b));
 	printf("%d\n", isalpha(b));
 	printf("%d ", ft_isalpha(c));
 	printf("%d\n", isalpha(c));
 	printf("%d ", ft_isalpha(d));
 	printf("%d\n", isalpha(d));
-
 }
 
-
-void ft_isascii_test(void)
+void	ft_isascii_test(void)
 {
-	int a;
-	int b;
-	int e;
+	int	a;
+	int	b;
+	int	e;
 	int	c;
 	int	d;
 
@@ -124,7 +124,7 @@ void ft_isascii_test(void)
 	d = 153;
 	printf("%d ", ft_isascii(a));
 	printf("%d\n", isascii(a));
-	//Original ASCII contains unsigned (or positive) values from 0 to 127 (128 characters). Extended ASCII uses 8 bits and therefore has 256 potential values.
+	// Original ASCII contains unsigned (or positive) values from 0 to 127 (128 characters). Extended ASCII uses 8 bits and therefore has 256 potential values.
 	printf("%d ", ft_isascii(b));
 	printf("%d\n", isascii(b));
 	printf("%d ", ft_isascii(e));
@@ -133,14 +133,13 @@ void ft_isascii_test(void)
 	printf("%d\n", isascii(c));
 	printf("%d ", ft_isascii(d));
 	printf("%d\n", isascii(d));
-
 }
 
-void ft_isdigit_test(void)
+void	ft_isdigit_test(void)
 {
-	int a;
-	int b;
-	int e;
+	int	a;
+	int	b;
+	int	e;
 	int	c;
 	int	d;
 
@@ -151,13 +150,13 @@ void ft_isdigit_test(void)
 	d = 'u';
 	printf("%d ", ft_isdigit(a));
 	printf("%d\n", isdigit(a));
-	//system-specific or compiler-specific details that cause isalpha() to return a different non-zero value, such as 1024
-	printf("%d ", ft_isdigit(b));
+	// system-specific or compiler-specific details that cause isalpha() to return a different non-zero value,
+	such as 1024 printf("%d ", ft_isdigit(b));
 	printf("%d\n", isdigit(b));
 	printf("%d ", ft_isdigit(e));
 	printf("%d\n", isdigit(e));
-	//the computer reads it as asscii value 5 while not putting ' ', which is "Enquiry" in this case
-	printf("%d ", ft_isdigit(e));
+	// the computer reads it as asscii value 5 while not putting ' ',
+	which is "Enquiry" in this case printf("%d ", ft_isdigit(e));
 	printf("%d\n", isdigit(e));
 	printf("%d ", ft_isdigit(c));
 	printf("%d\n", isdigit(c));
@@ -165,11 +164,11 @@ void ft_isdigit_test(void)
 	printf("%d\n", isdigit(d));
 }
 
-void ft_isprint_test(void)
+void	ft_isprint_test(void)
 {
-	int a;
-	int b;
-	int e;
+	int	a;
+	int	b;
+	int	e;
 	int	c;
 	int	d;
 
@@ -190,82 +189,91 @@ void ft_isprint_test(void)
 	printf("%d\n", isprint(d));
 }
 
-void ft_itoa_test(void)
+void	ft_itoa_test(void)
 {
-	int i = -12345;
-	char *str = ft_itoa(i);
+	int		i;
+	char	*str;
 
+	i = -12345;
+	str = ft_itoa(i);
 	printf("%s", str);
 	free(str);
 }
 
-void  ft_memchr_test(void)
+void	ft_memchr_test(void)
 {
-	const char  *s = "This is isg";
+	const char	*s = "This is isg";
 
-	//printf("%.11s", (char  *)ft_memchr(s, c, n));
+	// printf("%.11s", (char  *)ft_memchr(s, c, n));
 	assert(memchr(s, 'i', 2) == ft_memchr(s, 'i', 2));
 	assert(memchr(s, 'i', 3) == ft_memchr(s, 'i', 3));
 	assert(memchr(s, 'i', 10) == ft_memchr(s, 'i', 10));
 	assert(memchr(s, 'Y', 11) == ft_memchr(s, 'Y', 11));
 }
 
-void  ft_memcmp_test(void)
+void	ft_memcmp_test(void)
 {
-    const void *s1 = "This is s1";
-    const void *s2 = "This is s2";
+	const void	*s1 = "This is s1";
+	const void	*s2 = "This is s2";
 
-    assert(memcmp(s1, s2, 11) == ft_memcmp(s1, s2, 11));
-    assert(memcmp(s1, s2, 10) == ft_memcmp(s1, s2, 10));
-    assert(memcmp(s1, s2, 5) == ft_memcmp(s1, s2, 5));
-    assert(memcmp(s1, s2, 0) == ft_memcmp(s1, s2, 0));
+	assert(memcmp(s1, s2, 11) == ft_memcmp(s1, s2, 11));
+	assert(memcmp(s1, s2, 10) == ft_memcmp(s1, s2, 10));
+	assert(memcmp(s1, s2, 5) == ft_memcmp(s1, s2, 5));
+	assert(memcmp(s1, s2, 0) == ft_memcmp(s1, s2, 0));
 }
 
-
-void ft_memcpy_test(void)
+void	ft_memcpy_test(void)
 {
-	char	dst[]="";
-	char	dst1[]="";
-	char	*src = "456789";
-	size_t	n = 3;
+	char	dst[] = "";
+	char	dst1[] = "";
+	char	*src;
+	size_t	n;
 
+	src = "456789";
+	n = 3;
 	printf("%s\n", (char *)memcpy(dst, src, n));
 	printf("%s\n", (char *)ft_memcpy(dst1, src, n));
-	for(size_t i = 0; i < n; i++)
+	for (size_t i = 0; i < n; i++)
 	{
 		printf("%c", dst[i]);
 	}
 }
 
-void ft_memmove_test(void)
+void	ft_memmove_test(void)
 {
 	char	dest[50] = "";
-	char	*src = "fdfgdffd";
-	size_t	n = 5;
+	char	*src;
+	size_t	n;
 
+	src = "fdfgdffd";
+	n = 5;
 	printf("%.5s", (char *)ft_memmove(dest, src, n));
 }
 
-void ft_memset_test(void)
+void	ft_memset_test(void)
 {
-	char a[50];
-	int	c;
+	char	a[50];
+	int		c;
 	size_t	n;
 
 	c = '0';
-	n =  4;
+	n = 4;
 	a[4] = '\0';
-  //printf("%.3s", (char *)memset(a, c, n));
+	// printf("%.3s", (char *)memset(a, c, n));
 	printf("%s", (char *)ft_memset(a, c, n));
 }
 
-void ft_split_test(void)
+void	ft_split_test(void)
 {
-	char const *s = ",Hello,,this is,,a,,test,,hah";
-	char	c = 0;
-	char	**arr = ft_split(s, c);
-	int	i = 0;
+	char const	*s;
+	char		c;
+	char		**arr;
+	int			i;
 
+	s = ",Hello,,this is,,a,,test,,hah";
+	c = 0;
+	arr = ft_split(s, c);
+	i = 0;
 	while (arr[i])
 	{
 		printf("%s\n", arr[i]);
@@ -275,75 +283,86 @@ void ft_split_test(void)
 	free(arr);
 }
 
-void ft_strchr_test(void)
+void	ft_strchr_test(void)
 {
-    const char *s = "THIS IS ISH";
-    char c = 'S';
+	const char	*s = "THIS IS ISH";
+	char		c;
 
-    printf("%s", ft_strchr(s, c));
-    assert(strchr(s, c) == ft_strchr(s, c));
+	c = 'S';
+	printf("%s", ft_strchr(s, c));
+	assert(strchr(s, c) == ft_strchr(s, c));
 }
 
-void ft_strdup_test(void)
+void	ft_strdup_test(void)
 {
-    const char *s1 = "";
-    char *origin = strdup(s1);
-    char *mine = ft_strdup(s1);
-    assert(strcmp(origin, mine) == 0);
-    free(origin);
-    free(mine);
+	const char	*s1 = "";
+	char		*origin;
+	char		*mine;
+
+	origin = strdup(s1);
+	mine = ft_strdup(s1);
+	assert(strcmp(origin, mine) == 0);
+	free(origin);
+	free(mine);
 }
 
-void ft_ttoupper(unsigned int i, char *c)
+void	ft_ttoupper(unsigned int i, char *c)
 {
-    (void) i;
-   if( *c >= 'a' && *c <= 'z')
-   {
-       *c -= 32;
-   }
+	(void)i;
+	if (*c >= 'a' && *c <= 'z')
+	{
+		*c -= 32;
+	}
 }
 
-void ft_ttolower(unsigned int i, char *c)
+void	ft_ttolower(unsigned int i, char *c)
 {
-    (void) i;
-   if(*c >= 'A' && *c <= 'Z')
-   {
-       *c += 32;
-   }
+	(void)i;
+	if (*c >= 'A' && *c <= 'Z')
+	{
+		*c += 32;
+	}
 }
 
-void ft_striteri_test(void)
+void	ft_striteri_test(void)
 {
-    char s[] = "This is original";
-    ft_striteri(s, ft_ttoupper);
-    printf("%s\n", s);
-    ft_striteri(s, ft_ttolower);
-    printf("%s\n",s );
+	char	s[] = "This is original";
+
+	ft_striteri(s, ft_ttoupper);
+	printf("%s\n", s);
+	ft_striteri(s, ft_ttolower);
+	printf("%s\n", s);
 }
 
-void ft_strjoin_test(void)
+void	ft_strjoin_test(void)
 {
-    char const *s1 = "";
-    char const *s2 = " ";
-    char *expecteds3 = " ";
-    char *result = ft_strjoin(s1, s2);
-    size_t len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	char const	*s1;
+	char const	*s2;
+	char		*expecteds3;
+	char		*result;
+	size_t		len;
 
-    assert(ft_strncmp(expecteds3, result, len) == 0);
+	s1 = "";
+	s2 = " ";
+	expecteds3 = " ";
+	result = ft_strjoin(s1, s2);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	assert(ft_strncmp(expecteds3, result, len) == 0);
 }
 
-void ft_strlcat_test(void)
+void	ft_strlcat_test(void)
 {
-	char dst[50] = "Hello";
-	char dst1[50] = "World";
-	const char *src = "is here";
-	char dst2[50] = "Hello";
-	char dst3[50] = "Hello";
-	char dst4[50] = "Hello";
-	char dst5[50] = "Hello";
-	char dst6[50] = "Hello";
-	char dst7[50] = "Hello";
-	//assert(strlcat(dst, src, 20) == ft_strlcat(dst1, src, 20));
+	char		dst[50] = "Hello";
+	char		dst1[50] = "World";
+	const char	*src = "is here";
+	char		dst2[50] = "Hello";
+	char		dst3[50] = "Hello";
+	char		dst4[50] = "Hello";
+	char		dst5[50] = "Hello";
+	char		dst6[50] = "Hello";
+	char		dst7[50] = "Hello";
+
+	// assert(strlcat(dst, src, 20) == ft_strlcat(dst1, src, 20));
 	printf("%lu\n", ft_strlcat(dst, src, 4));
 	printf("%s", dst);
 	assert(strlcat(dst2, src, 10) == ft_strlcat(dst3, src, 10));
@@ -351,20 +370,25 @@ void ft_strlcat_test(void)
 	assert(strlcat(dst6, src, 0) == ft_strlcat(dst7, src, 0));
 }
 
-void ft_strlcpy_test(void)
+void	ft_strlcpy_test(void)
 {
-	char dst[50];
-	const char src[] = "This is src";
-	char dst1[50];
-	const char src1[] = "This is src";
-	char dst2[50];
-	const char src2[] = "This is src";
-	char dst3[50];
-	const char src3[] = "";
-	size_t size = sizeof(src);
-	size_t size1 = 0;
-	size_t size2= 5;
-	size_t size3 = 5;
+	char		dst[50];
+	const char	src[] = "This is src";
+	char		dst1[50];
+	const char	src1[] = "This is src";
+	char		dst2[50];
+	const char	src2[] = "This is src";
+	char		dst3[50];
+	const char	src3[] = "";
+	size_t		size;
+	size_t		size1;
+	size_t		size2;
+	size_t		size3;
+
+	size = sizeof(src);
+	size1 = 0;
+	size2 = 5;
+	size3 = 5;
 	ft_strlcpy(dst, src, size);
 	printf("%s\n", dst);
 	ft_strlcpy(dst1, src1, size1);
@@ -375,14 +399,14 @@ void ft_strlcpy_test(void)
 	printf("%s\n", dst3);
 }
 
-void ft_strlen_test(void)
+void	ft_strlen_test(void)
 {
 	const char	*a;
 	const char	*b;
 	const char	*c;
 	const char	*d;
 	const char	*e;
-	
+
 	a = "sgfhdf";
 	b = "";
 	c = "  ";
@@ -400,108 +424,129 @@ void ft_strlen_test(void)
 	printf("%lu\n", strlen(e));
 }
 
-char    ft_ttoupper1(unsigned int i, char c)
+char	ft_ttoupper1(unsigned int i, char c)
 {
-    (void) i;
-   if((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
-   {
-       return (c - 32);
-   }
-   return c;
+	(void)i;
+	if ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
+	{
+		return (c - 32);
+	}
+	return (c);
 }
 
-char    ft_ttolower1(unsigned int i, char c)
+char	ft_ttolower1(unsigned int i, char c)
 {
-    (void) i;
-   if((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
-   {
-       return (c + 32);
-   }
-   return c;
+	(void)i;
+	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
+	{
+		return (c + 32);
+	}
+	return (c);
 }
 
-void ft_strmapi_test(void)
+void	ft_strmapi_test(void)
 {
-    char const *s = "This is original";
-    char    *result = ft_strmapi(s, ft_ttoupper1);
-    free(result);
-    result = ft_strmapi(s, ft_ttolower1);
-    printf("%s", result);
-    free(result);
+	char const	*s;
+	char		*result;
+
+	s = "This is original";
+	result = ft_strmapi(s, ft_ttoupper1);
+	free(result);
+	result = ft_strmapi(s, ft_ttolower1);
+	printf("%s", result);
+	free(result);
 }
 
-void ft_strncmp_test(void)
+void	ft_strncmp_test(void)
 {
-	const char *s1 = "asdffg";
-	const char *s2 = "asdfg";
+	const char	*s1 = "asdffg";
+	const char	*s2 = "asdfg";
+
 	assert(ft_strncmp(s1, s2, 5) == strncmp(s1, s2, 5));
 	assert(ft_strncmp(s1, s2, 2) == strncmp(s1, s2, 2));
 	assert(ft_strncmp(s1, s2, 6) == strncmp(s1, s2, 6));
 	assert(ft_strncmp(s1, s2, 0) == strncmp(s1, s2, 0));
 }
 
-void ft_strnstr_test(void)
+void	ft_strnstr_test(void)
 {
-    const char *haystack = "dsfsd";
-   // printf("%s", strnstr(haystack, "ds", 3));
-   // printf("%s", ft_strnstr(haystack, "ds", 3));
-    assert(strnstr(haystack, "fs", 5) == ft_strnstr(haystack, "fs", 5));
-    assert(strnstr(haystack, "fs", 1) == ft_strnstr(haystack, "fs", 1));
-    assert(strnstr(haystack, "ds", 0) == ft_strnstr(haystack, "ds", 0));
-    assert(strnstr(haystack, "", 3) == ft_strnstr(haystack, "", 3));
-    assert(strnstr(haystack, "a", 5) == ft_strnstr(haystack, "a", 5));
+	const char	*haystack = "dsfsd";
+
+	// printf("%s", strnstr(haystack, "ds", 3));
+	// printf("%s", ft_strnstr(haystack, "ds", 3));
+	assert(strnstr(haystack, "fs", 5) == ft_strnstr(haystack, "fs", 5));
+	assert(strnstr(haystack, "fs", 1) == ft_strnstr(haystack, "fs", 1));
+	assert(strnstr(haystack, "ds", 0) == ft_strnstr(haystack, "ds", 0));
+	assert(strnstr(haystack, "", 3) == ft_strnstr(haystack, "", 3));
+	assert(strnstr(haystack, "a", 5) == ft_strnstr(haystack, "a", 5));
 }
 
-void ft_strrchr_test(void)
+void	ft_strrchr_test(void)
 {
-	const char *s = "THIS IS ISH";
+	const char	*s = "THIS IS ISH";
 
-	//printf("%s", ft_strrchr(s, 'I'));
-	assert(strrchr(s, 'I')  == ft_strrchr(s, 'I'));
-	assert(strrchr(s, 'Z')  == ft_strrchr(s, 'Z'));
-	assert(strrchr(s, '\0')  == ft_strrchr(s, '\0'));
+	// printf("%s", ft_strrchr(s, 'I'));
+	assert(strrchr(s, 'I') == ft_strrchr(s, 'I'));
+	assert(strrchr(s, 'Z') == ft_strrchr(s, 'Z'));
+	assert(strrchr(s, '\0') == ft_strrchr(s, '\0'));
 }
 
-void ft_strtrim_test(void)
+void	ft_strtrim_test(void)
 {
-	char const *s1 = "";
-	char const	*set = "2";
-	char	*str = ft_strtrim(s1, set);
+	char const	*s1;
+	char const	*set;
+	char		*str;
+
+	s1 = "";
+	set = "2";
+	str = ft_strtrim(s1, set);
 	printf("%s", str);
 	free(str);
 }
 
-void ft_substr_test(void)
+void	ft_substr_test(void)
 {
-    char const *s = "Apple pie";
-    unsigned int start = 5;
-    size_t  len = 10;
-    char    *expected = " pie";
-    char *result = ft_substr(s, start, len);
-    assert(ft_strncmp(expected, result, len) == 0);
-    free (result);
+	char const		*s;
+	unsigned int	start;
+	size_t			len;
+	char			*expected;
+	char			*result;
+
+	s = "Apple pie";
+	start = 5;
+	len = 10;
+	expected = " pie";
+	result = ft_substr(s, start, len);
+	assert(ft_strncmp(expected, result, len) == 0);
+	free(result);
 }
 
-void ft_tolower_test(void)
+void	ft_tolower_test(void)
 {
-   int c = 97;
-   int b = 97;
-   printf("%c", (unsigned char)ft_tolower(c));
-   printf("%c", (unsigned char)tolower(b));
+	int	c;
+	int	b;
+
+	c = 97;
+	b = 97;
+	printf("%c", (unsigned char)ft_tolower(c));
+	printf("%c", (unsigned char)tolower(b));
 }
 
-void ft_toupper_test(void)
+void	ft_toupper_test(void)
 {
-    int c = -1;
-    int b = -1;
-    printf("%c", (unsigned char)ft_toupper(c));
-    printf("%c", (unsigned char)toupper(b));
+	int	c;
+	int	b;
+
+	c = -1;
+	b = -1;
+	printf("%c", (unsigned char)ft_toupper(c));
+	printf("%c", (unsigned char)toupper(b));
 }
 
-void ft_putchar_fd_test(void)
+void	ft_putchar_fd_test(void)
 {
-	char a;
-	int	fd;
+	char	a;
+	int		fd;
 
 	a = '\0';
 	fd = open("bar.txt", O_WRONLY | O_CREAT);
@@ -513,18 +558,18 @@ void ft_putchar_fd_test(void)
 	else
 	{
 		ft_putchar_fd(a, fd);
-
 	}
 	close(fd);
 }
 
-void ft_putendl_fd_test(void)
+void	ft_putendl_fd_test(void)
 {
-	char	*s = "ABCDE";
-	int	fd;
+	char	*s;
+	int		fd;
 
+	s = "ABCDE";
 	fd = open("dl.txt", O_RDWR | O_CREAT, 0777);
-	if(fd == -1)
+	if (fd == -1)
 	{
 		printf("failed");
 		return (1);
@@ -536,11 +581,12 @@ void ft_putendl_fd_test(void)
 	close(fd);
 }
 
-void ft_putnbr_fd_test(void)
+void	ft_putnbr_fd_test(void)
 {
-	int	n = 0;
-	int fd;
+	int	n;
+	int	fd;
 
+	n = 0;
 	fd = open("nbr.txt", O_RDWR | O_TRUNC | O_CREAT, 0777);
 	if (fd == -1)
 	{
@@ -554,16 +600,17 @@ void ft_putnbr_fd_test(void)
 	close(fd);
 }
 
-void ft_putstr_fd_test(void)
+void	ft_putstr_fd_test(void)
 {
-	char	*s = "abcde";
-	int	fd;
+	char	*s;
+	int		fd;
 
+	s = "abcde";
 	fd = open("bar.txt", O_WRONLY | O_TRUNC | O_CREAT, 0777);
-	if(fd == -1)
+	if (fd == -1)
 	{
 		printf("failed\n");
-		return(1);
+		return (1);
 	}
 	else
 	{
@@ -573,7 +620,6 @@ void ft_putstr_fd_test(void)
 	close(fd);
 }
 
-int main(void)
+int	main(void)
 {
-  
 }

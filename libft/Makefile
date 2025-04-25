@@ -6,7 +6,7 @@
 #    By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/17 10:55:26 by jinzhang          #+#    #+#              #
-#    Updated: 2025/04/17 10:55:28 by jinzhang         ###   ########.fr        #
+#    Updated: 2025/04/25 14:35:56 by jinzhang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,5 +44,9 @@ fclean: clean
 #done by clean the library file libft.a → done in the fclean target itself
 
 re: fclean all
+
+test: test.c
+		cc $< $(NAME) -o $@ -lbsd
+		./$@
 
 .PHONY: all clean fclean re 

@@ -12,25 +12,27 @@
 
 #include "libft.h"
 
-/*Copying forward is usually faster on modern CPUs due to memory caching and how the CPU prefetches data. 
+/*Copying forward is usually faster on modern CPUs due to memory caching and how the CPU prefetches data.
 it is safe when dest<=src and they still overlap
-If dest is after/more(comparing the memory address) than src, to ensure that no data loss occurs, 
-the copy must start from the last byte to be copied. 
-To find the last byte of src and dest add the number of bytes to be copied (n), minus 1 to exclude the ‘\0' characters.
+If dest is after/more(comparing the memory address) than src,
+	to ensure that no data loss occurs,
+the copy must start from the last byte to be copied.
+To find the last byte of src and dest add the number of bytes to be copied (n),
+	minus 1 to exclude the ‘\0' characters.
 */
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*out;
-	char	*in;
-	size_t	i;
+	char *out;
+	char *in;
+	size_t i;
 
 	i = 0;
 	out = (char *)dest;
-	in = (char	*)src;
-	if(dest <= src)
+	in = (char *)src;
+	if (dest <= src)
 	{
-		while(i < n)
+		while (i < n)
 		{
 			out[i] = in[i];
 			i++;
@@ -39,9 +41,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		i = n;
-		while(i > 0)
+		while (i > 0)
 		{
-			out[i-1] = in[i-1];
+			out[i - 1] = in[i - 1];
 			i--;
 		}
 	}
