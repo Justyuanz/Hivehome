@@ -19,7 +19,6 @@ void	*ft_calloc(size_t nmem, size_t size)
 	unsigned char	*ptr;
 
 	i = 0;
-	totalbytes = nmem * size;
 	if (nmem == 0 || size == 0)
 	{
 		ptr = malloc(1);
@@ -27,8 +26,9 @@ void	*ft_calloc(size_t nmem, size_t size)
 			return (NULL);
 		return ((void *)ptr);
 	}
-	if (totalbytes / nmem != size)
+	if (size > SIZE_MAX / nmem)
 		return (NULL);
+	totalbytes = nmem * size;
 	ptr = malloc(totalbytes);
 	if (ptr == NULL)
 		return (NULL);
