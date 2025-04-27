@@ -1,5 +1,7 @@
 #include "libft.h"
 
+// The original strdup segfaults when passing NULL
+
 char	*ft_strdup(const char *s1)
 {
 	char *s2;

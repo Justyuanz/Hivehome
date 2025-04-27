@@ -14,7 +14,8 @@
 
 /*'\0' is part of the string. Used strlen there because I wanna loop throought the '\0' char as well
 the return type is char *, that is why it needs casting in the  return,
-	s+i is pointer arithmetic */
+	s+i is pointer arithmetic 
+	The original function segfaults if *s is NULL*/
 
 char	*ft_strchr(const char *s, int c)
 {

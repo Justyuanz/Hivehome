@@ -11,11 +11,14 @@ static int	ft_isset(char c, char const *set)
 	size_t	i;
 
 	i = 0;
-	while (set[i])
+	if(set != NULL)
 	{
-		if (c == set[i])
-			return (1);
-		i++;
+		while (set[i])
+		{
+			if (c == set[i])
+				return (1);
+			i++;
+		}
 	}
 	return (0);
 }

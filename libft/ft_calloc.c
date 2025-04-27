@@ -19,7 +19,6 @@ void	*ft_calloc(size_t nmem, size_t size)
 	unsigned char	*ptr;
 
 	i = 0;
-	ptr = NULL;
 	totalbytes = nmem * size;
 	if (nmem == 0 || size == 0)
 	{

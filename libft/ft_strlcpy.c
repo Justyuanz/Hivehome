@@ -19,6 +19,7 @@ size_t is result of sizeof operator,
 size_t is an unsigned type,When you subtract 1 from 0,
 	you wrap around to the maximum possible value of size_t
 (size_t 0)-1 == 18446744073709551615*/
+//If the return value is >= dstsize, the output string has been truncated. 
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
