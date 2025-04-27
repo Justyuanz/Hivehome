@@ -12,6 +12,8 @@ static int	count_words(char const *s, char c)
 
 	i = 0;
 	word = 0;
+	if (!s)
+		return (0);
 	len = ft_strlen(s);
 	while (i < len)
 	{

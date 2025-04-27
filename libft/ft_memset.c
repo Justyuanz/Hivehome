@@ -19,7 +19,7 @@
 
  Type void is not assignable
  void pointers can store memory addresses of any type of data values,
-	like malloc returns a void pointer
+like malloc returns a void pointer
  vid *malloc(size_t size)  we cannot dereference void pointers and pointer arithmetic does not always work with void pointer
  *((char*)s) is  typecasting void pointer s to char pointer and then dereference it to get value
 
@@ -27,10 +27,12 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t i;
-	unsigned char j = (unsigned char)c;
-	unsigned char *str = (unsigned char *)s;
+	size_t			i;
+	unsigned char	j;
+	unsigned char	*str;
 
+	j = (unsigned char)c;
+	str = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{

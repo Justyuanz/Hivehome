@@ -33,6 +33,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t srclen;
 	size_t i;
 
+	if(!dst && size == 0)
+		return (ft_strlen(src));
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
 	i = 0;
