@@ -6,7 +6,7 @@
 #    By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/17 10:55:26 by jinzhang          #+#    #+#              #
-#    Updated: 2025/04/25 14:35:56 by jinzhang         ###   ########.fr        #
+#    Updated: 2025/04/28 18:14:50 by jinzhang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_strrchr.c
 BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
-			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
+			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-OBJS = $(SRCS:.c=.o)
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+OBJS = $(SRCS:%.c=%.o)
+BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)
 
 all: $(NAME)
 
@@ -34,18 +34,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-#“Create (or update) a static library called libft.a, 
-#and include these object files (ft_strlen.o, ft_putchar.o) in it. 
-#Also generate a symbol index so the linker can use it efficiently later.”
-
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME) 
-#The -f option in rm -f means Force deletion. fclean meant to be a "full clean" 
-#— it should remove everything that was generated, including.o files,
-#done by clean the library file libft.a → done in the fclean target itself
 
 re: fclean all
 
@@ -55,4 +48,4 @@ test: test.c
 		cc $< $(NAME) -o $@ -lbsd
 		./$@
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re
