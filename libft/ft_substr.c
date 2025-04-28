@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/28 20:39:20 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/28 20:39:29 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -7,9 +19,9 @@ use strdup to allocate an empty string so the freeing would be safe later.
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *sub;
-	size_t i;
-	size_t slen;
+	char	*sub;
+	size_t	i;
+	size_t	slen;
 
 	i = 0;
 	if (s == NULL)

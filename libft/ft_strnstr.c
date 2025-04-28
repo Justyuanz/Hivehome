@@ -1,12 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/28 20:40:55 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/28 20:41:30 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*
-Locates the first occurrence of the null-terminated string needle in the string haystack,
+Locates the first occurrence of the null-terminated string needle in the string 
+haystack,
 where not more than len characters are searched.
 
 If needle is an empty string, haystack is returned;
 if needle occurs nowhere in haystack, NULL is returned;
-otherwise a pointer to the first character of the first occurrence of needle is returned.
+otherwise a pointer to the first character of the first occurrence of needle is 
+returned.
 
 needle[i] && haystack[j + i] == needle[i] → compares each char of needle
 (j + i) < len → makes sure we don’t go past the allowed buffer

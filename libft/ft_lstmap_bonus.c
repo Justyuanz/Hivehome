@@ -1,18 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/28 19:08:16 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/28 20:07:01 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*newnode;
 	t_list	*headlist;
 
 	headlist = NULL;
-	if(!lst || !f || !del)
+	if (!lst || !f || !del)
 		return (NULL);
 	while (lst != NULL)
 	{
 		newnode = ft_lstnew(f(lst->content));
-
-		if(!newnode)
+		if (!newnode)
 		{
 			ft_lstclear(&newnode, del);
 			return (NULL);
@@ -20,5 +31,5 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 		ft_lstadd_back(&headlist, newnode);
 		lst = lst->next;
 	}
-	return(headlist);
+	return (headlist);
 }

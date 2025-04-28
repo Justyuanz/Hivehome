@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/28 20:23:18 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/28 20:23:42 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 // The original strdup segfaults when passing NULL
 
 char	*ft_strdup(const char *s1)
 {
-	char *s2;
-	size_t i;
+	char	*s2;
+	size_t	i;
 
 	i = 0;
 	s2 = malloc((ft_strlen(s1) + 1) * sizeof(char));

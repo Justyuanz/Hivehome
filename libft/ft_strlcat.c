@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 11:05:48 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/19 17:28:29 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:35:08 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ Strlcat() tries to concatenate src to the end of dst,
 	but only within a total buffer of size size, including the null terminator.
 The return value is not the number of characters copied,
 	but the total length of the string it TRIED to create.
-When size == 0,you are not allowed to even look into the destination buffer. So when size <= dslen,
+When size == 0,you are not allowed to even look into the destination buffer.i
+So when size <= dslen,
 	nothing can be appended after dst, it tried to create size + srclen string,
 	but there is no room to fit.
-Truncation in strlcat() happens when not all characters from src can be appended to dst because the total would exceed the buffer size (size).
+Truncation in strlcat() happens when not all characters from src can be appended
+to dst because the total would exceed the buffer size (size).
 check for trunction: size_t result = strlcat(dst, src,
 		size);  if (result >= size)
 when size > dstlen, it tries to create dstlen + srclen length's string,
@@ -29,11 +31,11 @@ when size > dstlen, it tries to create dstlen + srclen length's string,
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t dstlen;
-	size_t srclen;
-	size_t i;
+	size_t	dstlen;
+	size_t	srclen;
+	size_t	i;
 
-	if(!dst && size == 0)
+	if (!dst && size == 0)
 		return (ft_strlen(src));
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);

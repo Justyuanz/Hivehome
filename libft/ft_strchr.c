@@ -6,21 +6,22 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:11:52 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/22 18:50:03 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:33:38 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*'\0' is part of the string. Used strlen there because I wanna loop throought the '\0' char as well
+/*'\0' is part of the string. Used strlen there because I wanna loop throought
+ * the '\0' char as well
 the return type is char *, that is why it needs casting in the  return,
-	s+i is pointer arithmetic 
+	s+i is pointer arithmetic
 	The original function segfaults if *s is NULL*/
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
-	size_t b;
+	size_t	i;
+	size_t	b;
 
 	i = 0;
 	b = ft_strlen(s);

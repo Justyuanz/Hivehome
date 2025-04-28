@@ -6,9 +6,11 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 15:25:24 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/18 15:25:27 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:04:36 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

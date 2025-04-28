@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/28 18:40:01 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/28 20:42:07 by jinzhang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	get_len(long n)
@@ -17,6 +29,7 @@ static int	get_len(long n)
 	}
 	return (len);
 }
+
 static char	*make_str(char *str, long p, int len)
 {
 	if (p < 0)
@@ -32,11 +45,12 @@ static char	*make_str(char *str, long p, int len)
 	}
 	return (str);
 }
+
 char	*ft_itoa(int n)
 {
-	char *str;
-	int len;
-	long p;
+	char	*str;
+	int		len;
+	long	p;
 
 	p = (long)n;
 	len = 1;

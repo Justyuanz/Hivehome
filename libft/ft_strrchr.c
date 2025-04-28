@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:12:09 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/18 14:21:36 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:03:07 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t i;
-	size_t b;
-	char *j;
+	size_t	i;
+	size_t	b;
+	char	*j;
 
 	i = 0;
 	b = ft_strlen(s);
