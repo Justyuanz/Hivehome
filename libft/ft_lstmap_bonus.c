@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 19:08:16 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/29 13:00:59 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:10:24 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&newlist, newnode);
 		lst = lst->next;
 	}
-	return (headlist);
+	return (newlist);
 }

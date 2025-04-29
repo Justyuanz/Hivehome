@@ -611,7 +611,6 @@ void	ft_putstr_fd_test(void)
 	{
 		ft_putstr_fd(s, fd);
 	}
-	unlink("bar.txt");
 	close(fd);
 }
 
@@ -619,106 +618,149 @@ int	main(void)
 {
 		printf("Testing ft_atoi...\n");
 		ft_atoi_test();
-	
+		printf("\n");
+
 		printf("Testing ft_bzero...\n");
 		ft_bzero_test();
-	
+		printf("\n");
+		printf("\n");
+
 		printf("Testing ft_calloc...\n");
+		printf("\n");
 		mft_calloc_test();
-	
+		printf("\n");
+
 		printf("Testing ft_isalnum...\n");
 		ft_isalnum_test();
-	
+		printf("\n");
+
 		printf("Testing ft_isalpha...\n");
 		ft_isalpha_test();
-	
+		printf("\n");
+
 		printf("Testing ft_isascii...\n");
 		ft_isascii_test();
-	
+		printf("\n");
+
 		printf("Testing ft_isdigit...\n");
 		ft_isdigit_test();
-	
+		printf("\n");
+
 		printf("Testing ft_isprint...\n");
 		ft_isprint_test();
-	
+		printf("\n");
+
 		printf("Testing ft_itoa...\n");
 		ft_itoa_test();
-	
+		printf("\n");
+		printf("\n");
+
 		printf("Testing ft_memchr...\n");
 		ft_memchr_test();
-	
+		printf("\n");
+
 		printf("Testing ft_memcmp...\n");
 		ft_memcmp_test();
-	
+		printf("\n");
+
 		printf("Testing ft_memcpy...\n");
 		ft_memcpy_test();
-	
+		printf("\n");
+		printf("\n");
+
 		printf("Testing ft_memmove...\n");
 		ft_memmove_test();
-	
+		printf("\n");
+		printf("\n");
+
 		printf("Testing ft_memset...\n");
 		ft_memset_test();
-	
+		printf("\n");
+		printf("\n");
+
 		printf("Testing ft_split...\n");
 		ft_split_test();
-	
+		printf("\n");
+
 		printf("Testing ft_strchr...\n");
 		ft_strchr_test();
-	
+		printf("\n");
+		printf("\n");
+
 		printf("Testing ft_strdup...\n");
 		ft_strdup_test();
-	
+		printf("\n");
+
 		printf("Testing ft_striteri...\n");
 		ft_striteri_test();
-	
+		printf("\n");
+
 		printf("Testing ft_strjoin...\n");
 		ft_strjoin_test();
-	
+		printf("\n");
+
 		printf("Testing ft_strlcat...\n");
 		ft_strlcat_test();
-	
+		printf("\n");
+		printf("\n");
+
 		printf("Testing ft_strlcpy...\n");
 		ft_strlcpy_test();
-	
+		printf("\n");
+
 		printf("Testing ft_strlen...\n");
 		ft_strlen_test();
-	
+		printf("\n");
+
 		printf("Testing ft_strmapi...\n");
 		ft_strmapi_test();
-	
+		printf("\n");
+		printf("\n");
+
 		printf("Testing ft_strncmp...\n");
 		ft_strncmp_test();
-	
+		printf("\n");
+
 		printf("Testing ft_strnstr...\n");
 		ft_strnstr_test();
-	
+		printf("\n");
+
 		printf("Testing ft_strrchr...\n");
 		ft_strrchr_test();
-	
+		printf("\n");
+
 		printf("Testing ft_strtrim...\n");
 		ft_strtrim_test();
-	
+		printf("\n");
+
 		printf("Testing ft_substr...\n");
 		ft_substr_test();
-	
+		printf("\n");
+
 		printf("Testing ft_tolower...\n");
 		ft_tolower_test();
-	
+		printf("\n");
+
 		printf("Testing ft_toupper...\n");
 		ft_toupper_test();
-	
+		printf("\n");
+
 		printf("Testing ft_putchar_fd...\n");
 		ft_putchar_fd_test();
-	
+		printf("\n");
+
 		printf("Testing ft_putendl_fd...\n");
 		ft_putendl_fd_test();
-	
+		printf("\n");
+
 		printf("Testing ft_putnbr_fd...\n");
 		ft_putnbr_fd_test();
-	
+		printf("\n");
+
 		printf("Testing ft_putstr_fd...\n");
 		ft_putstr_fd_test();
-	
+		printf("\n");
+
 		printf("\n🎉 If you see this message, all tests finished without crashing!\n");
 		return (0);
 }
