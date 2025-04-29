@@ -6,7 +6,7 @@
 #    By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/17 10:55:26 by jinzhang          #+#    #+#              #
-#    Updated: 2025/04/29 12:47:54 by jinzhang         ###   ########.fr        #
+#    Updated: 2025/04/29 14:35:32 by jinzhang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,5 @@ bonus: .bonus
 .bonus: $(NAME) $(BONUS_OBJS)
 		ar rcs $(NAME) $(BONUS_OBJS)
 		touch .bonus
-
-test: test.c
-		cc $< $(NAME) -o $@ -lbsd
-		./$@
 
 .PHONY: all clean fclean re bonus
