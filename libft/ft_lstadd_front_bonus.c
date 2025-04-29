@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 19:07:52 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/28 20:11:23 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:58:41 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 C always passes by value (copy).
 If you return a new value, and reassign, you can still "update" the original.
 If you want to directly modify the original inside the function without return,
-	you must pass pointer(the address of the value)
+you must pass pointer(the address of the value)
 */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

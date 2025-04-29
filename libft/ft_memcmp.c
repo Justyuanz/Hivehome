@@ -6,17 +6,18 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 19:08:34 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/28 20:10:55 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:02:29 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*you can't index a void *,
+/*
+you can't index a void *,
 memcmp() compares raw bytes — it doesn't care about null characters ('\0'),
-	only the number of bytes (n)
-when the input is const, should cast it to const type too*/
-
+only the number of bytes (n)
+when the input is const, should cast it to const type too
+*/
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t				i;

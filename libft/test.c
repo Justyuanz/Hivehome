@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <fcntl.h>
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 
 void	ft_atoi_test(void)
 {
@@ -43,7 +43,7 @@ void	mft_calloc_test(void)
 	s1 = calloc(count, size);
 	s2 = ft_calloc(count, size);
 	if (s1 == NULL || s2 == NULL)
-		return (1);
+		return;
 	while (i < count * size)
 	{
 		if (s1[i] != s2[i])
@@ -51,7 +51,6 @@ void	mft_calloc_test(void)
 			free((void *)s1);
 			free((void *)s2);
 			printf("mismatch!");
-			return (s1[i] - s2[i]);
 		}
 		i++;
 	}
@@ -101,7 +100,7 @@ void	ft_isalpha_test(void)
 	printf("%d ", ft_isalpha(a));
 	printf("%d\n", isalpha(a));
 	// system-specific or compiler-specific details that cause isalpha() to return a different non-zero value,
-	such as 1024 printf("%d ", ft_isalpha(b));
+	//such as 1024 printf("%d ", ft_isalpha(b));
 	printf("%d\n", isalpha(b));
 	printf("%d ", ft_isalpha(c));
 	printf("%d\n", isalpha(c));
@@ -151,12 +150,12 @@ void	ft_isdigit_test(void)
 	printf("%d ", ft_isdigit(a));
 	printf("%d\n", isdigit(a));
 	// system-specific or compiler-specific details that cause isalpha() to return a different non-zero value,
-	such as 1024 printf("%d ", ft_isdigit(b));
+	//such as 1024 printf("%d ", ft_isdigit(b));
 	printf("%d\n", isdigit(b));
 	printf("%d ", ft_isdigit(e));
 	printf("%d\n", isdigit(e));
 	// the computer reads it as asscii value 5 while not putting ' ',
-	which is "Enquiry" in this case printf("%d ", ft_isdigit(e));
+	//which is "Enquiry" in this case printf("%d ", ft_isdigit(e));
 	printf("%d\n", isdigit(e));
 	printf("%d ", ft_isdigit(c));
 	printf("%d\n", isdigit(c));
@@ -362,7 +361,7 @@ void	ft_strlcat_test(void)
 	char		dst6[50] = "Hello";
 	char		dst7[50] = "Hello";
 
-	// assert(strlcat(dst, src, 20) == ft_strlcat(dst1, src, 20));
+	assert(strlcat(dst, src, 20) == ft_strlcat(dst1, src, 20));
 	printf("%lu\n", ft_strlcat(dst, src, 4));
 	printf("%s", dst);
 	assert(strlcat(dst2, src, 10) == ft_strlcat(dst3, src, 10));
@@ -553,7 +552,6 @@ void	ft_putchar_fd_test(void)
 	if (fd == -1)
 	{
 		printf("FAILED\n");
-		return (1);
 	}
 	else
 	{
@@ -572,7 +570,6 @@ void	ft_putendl_fd_test(void)
 	if (fd == -1)
 	{
 		printf("failed");
-		return (1);
 	}
 	else
 	{
@@ -591,7 +588,6 @@ void	ft_putnbr_fd_test(void)
 	if (fd == -1)
 	{
 		printf("failed");
-		return (1);
 	}
 	else
 	{
@@ -610,7 +606,6 @@ void	ft_putstr_fd_test(void)
 	if (fd == -1)
 	{
 		printf("failed\n");
-		return (1);
 	}
 	else
 	{
@@ -622,4 +617,108 @@ void	ft_putstr_fd_test(void)
 
 int	main(void)
 {
+		printf("Testing ft_atoi...\n");
+		ft_atoi_test();
+	
+		printf("Testing ft_bzero...\n");
+		ft_bzero_test();
+	
+		printf("Testing ft_calloc...\n");
+		mft_calloc_test();
+	
+		printf("Testing ft_isalnum...\n");
+		ft_isalnum_test();
+	
+		printf("Testing ft_isalpha...\n");
+		ft_isalpha_test();
+	
+		printf("Testing ft_isascii...\n");
+		ft_isascii_test();
+	
+		printf("Testing ft_isdigit...\n");
+		ft_isdigit_test();
+	
+		printf("Testing ft_isprint...\n");
+		ft_isprint_test();
+	
+		printf("Testing ft_itoa...\n");
+		ft_itoa_test();
+	
+		printf("Testing ft_memchr...\n");
+		ft_memchr_test();
+	
+		printf("Testing ft_memcmp...\n");
+		ft_memcmp_test();
+	
+		printf("Testing ft_memcpy...\n");
+		ft_memcpy_test();
+	
+		printf("Testing ft_memmove...\n");
+		ft_memmove_test();
+	
+		printf("Testing ft_memset...\n");
+		ft_memset_test();
+	
+		printf("Testing ft_split...\n");
+		ft_split_test();
+	
+		printf("Testing ft_strchr...\n");
+		ft_strchr_test();
+	
+		printf("Testing ft_strdup...\n");
+		ft_strdup_test();
+	
+		printf("Testing ft_striteri...\n");
+		ft_striteri_test();
+	
+		printf("Testing ft_strjoin...\n");
+		ft_strjoin_test();
+	
+		printf("Testing ft_strlcat...\n");
+		ft_strlcat_test();
+	
+		printf("Testing ft_strlcpy...\n");
+		ft_strlcpy_test();
+	
+		printf("Testing ft_strlen...\n");
+		ft_strlen_test();
+	
+		printf("Testing ft_strmapi...\n");
+		ft_strmapi_test();
+	
+		printf("Testing ft_strncmp...\n");
+		ft_strncmp_test();
+	
+		printf("Testing ft_strnstr...\n");
+		ft_strnstr_test();
+	
+		printf("Testing ft_strrchr...\n");
+		ft_strrchr_test();
+	
+		printf("Testing ft_strtrim...\n");
+		ft_strtrim_test();
+	
+		printf("Testing ft_substr...\n");
+		ft_substr_test();
+	
+		printf("Testing ft_tolower...\n");
+		ft_tolower_test();
+	
+		printf("Testing ft_toupper...\n");
+		ft_toupper_test();
+	
+		printf("Testing ft_putchar_fd...\n");
+		ft_putchar_fd_test();
+	
+		printf("Testing ft_putendl_fd...\n");
+		ft_putendl_fd_test();
+	
+		printf("Testing ft_putnbr_fd...\n");
+		ft_putnbr_fd_test();
+	
+		printf("Testing ft_putstr_fd...\n");
+		ft_putstr_fd_test();
+	
+		printf("\n🎉 If you see this message, all tests finished without crashing!\n");
+		return (0);
 }

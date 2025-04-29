@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 19:08:16 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/28 20:07:01 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:00:59 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*newnode;
-	t_list	*headlist;
+	t_list	*newlist;
 
-	headlist = NULL;
+	newlist = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
 	while (lst != NULL)
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&newnode, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&headlist, newnode);
+		ft_lstadd_back(&newlist, newnode);
 		lst = lst->next;
 	}
 	return (headlist);
