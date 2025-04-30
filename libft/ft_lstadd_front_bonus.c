@@ -6,7 +6,7 @@
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 19:07:52 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/29 12:58:41 by jinzhang         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:07:37 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ you must pass pointer(the address of the value)
 */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if(!lst || !new)
+		return;
 	new->next = *lst;
 	*lst = new;
 }
