@@ -1,46 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 19:04:23 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/28 20:26:01 by jinzhang         ###   ########.fr       */
+/*   Created: 2025/04/18 16:05:13 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/29 16:18:02 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(char c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
-		|| c == ' ');
-}
-
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	sign;
-	int	result;
+	size_t	i;
+	size_t	s;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	s = ft_strlen(src);
+	if (size > 0)
 	{
-		if (str[i] == '-')
+		while (src[i] != '\0' && i < size - 1)
 		{
-			sign = -sign;
+			dst[i] = src[i];
+			i++;
 		}
-		i++;
+		dst[i] = '\0';
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + str[i] - '0';
-		i++;
-	}
-	return (sign * result);
+	return (s);
 }

@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 19:08:16 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/29 13:10:24 by jinzhang         ###   ########.fr       */
+/*   Created: 2025/04/28 19:05:02 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/29 16:19:57 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	*ft_calloc(size_t nmem, size_t size)
 {
-	t_list	*newnode;
-	t_list	*newlist;
+	size_t			i;
+	size_t			totalbytes;
+	unsigned char	*ptr;
 
-	newlist = NULL;
-	if (!lst || !f || !del)
-		return (NULL);
-	while (lst != NULL)
+	i = 0;
+	if (nmem == 0 || size == 0)
 	{
-		newnode = ft_lstnew(f(lst->content));
-		if (!newnode)
-		{
-			ft_lstclear(&newnode, del);
+		ptr = malloc(1);
+		if (ptr == NULL)
 			return (NULL);
-		}
-		ft_lstadd_back(&newlist, newnode);
-		lst = lst->next;
+		return ((void *)ptr);
 	}
-	return (newlist);
+	if (size > SIZE_MAX / nmem)
+		return (NULL);
+	totalbytes = nmem * size;
+	ptr = malloc(totalbytes);
+	if (ptr == NULL)
+		return (NULL);
+	while (i < totalbytes)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+	return ((void *)ptr);
 }

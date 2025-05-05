@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinzhang <jinzhang@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 19:08:24 by jinzhang          #+#    #+#             */
-/*   Updated: 2025/04/29 13:00:27 by jinzhang         ###   ########.fr       */
+/*   Created: 2025/04/18 13:11:52 by jinzhang          #+#    #+#             */
+/*   Updated: 2025/04/29 16:18:27 by jinzhang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-Inside the loop, you must move lst pointing to the next node or it might become
-infinite loop.
-*/
-int	ft_lstsize(t_list *lst)
+char	*ft_strchr(const char *s, int c)
 {
-	int	count;
+	size_t	i;
+	size_t	b;
 
-	count = 0;
-	while (lst != NULL)
+	i = 0;
+	b = ft_strlen(s);
+	while (i <= b)
 	{
-		count++;
-		lst = lst->next;
+		if ((unsigned char)c == s[i])
+		{
+			return ((char *)s + i);
+		}
+		i++;
 	}
-	return (count);
+	return (NULL);
 }
